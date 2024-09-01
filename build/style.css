@@ -15,6 +15,8 @@
     font-size: var(--lkt-tag-font-size);
     font-weight: var(--lkt-tag-font-weight);
     color: var(--lkt-tag-color);
+    text-align: var(--lkt-tag-text-align);
+    transition: var(--lkt-tag-transition);
 }
 
 .lkt-tag:hover {

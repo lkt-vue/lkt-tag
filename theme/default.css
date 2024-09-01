@@ -2,6 +2,7 @@
     --lkt-tag-gap: 15px;
     --lkt-tag-font-size: 14px;
     --lkt-tag-font-weight: 14px;
+    --lkt-tag-text-align: center;
     --lkt-tag-padding: 15px;
     --lkt-tag-min-width: initial;
     --lkt-tag-max-width: initial;
@@ -15,4 +16,5 @@
     --lkt-tag-border-style: solid;
     --lkt-tag-border-color: #ffffff;
     --lkt-tag-border-color-hover: #ffffff;
+    --lkt-tag-transition: all linear 300ms;
 }
