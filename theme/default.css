@@ -1,0 +1,12 @@
+:root {
+    --lkt-tag-gap: 15px;
+    --lkt-tag-padding: 15px;
+    --lkt-tag-min-width: initial;
+    --lkt-tag-max-width: initial;
+    --lkt-tag-width: initial;
+    --lkt-tag-bg: #ffffff;
+    --lkt-tag-border-radius: 1px;
+    --lkt-tag-border-width: 1px;
+    --lkt-tag-border-style: solid;
+    --lkt-tag-border-color: #ffffff;
+}
