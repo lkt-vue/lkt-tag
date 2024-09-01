@@ -1,4 +1,4 @@
-export { LktLogin as default };
-declare namespace LktLogin {
+export { LktTag as default };
+declare namespace LktTag {
     function install(app: any): void;
 }

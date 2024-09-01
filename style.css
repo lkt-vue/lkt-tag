@@ -12,4 +12,13 @@
     border-width: var(--lkt-tag-border-width);
     border-style: var(--lkt-tag-border-style);
     border-color: var(--lkt-tag-border-color);
+    font-size: var(--lkt-tag-font-size);
+    font-weight: var(--lkt-tag-font-weight);
+    color: var(--lkt-tag-color);
+}
+
+.lkt-tag:hover {
+    background: var(--lkt-tag-bg-hover);
+    border-color: var(--lkt-tag-border-color-hover);
+    color: var(--lkt-tag-color-hover);
 }
