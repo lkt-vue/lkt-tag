@@ -1,20 +1,74 @@
 :root {
-    --lkt-tag-gap: 15px;
+    --lkt-tag-gap: 0;
+    --lkt-tag-gap-content: 15px;
+    --lkt-tag-gap-featured: 15px;
+
     --lkt-tag-font-size: 14px;
-    --lkt-tag-font-weight: 14px;
+    --lkt-tag-font-size-content: var(--lkt-tag-font-size);
+    --lkt-tag-font-size-featured: 14var(--lkt-tag-font-size);
+
+    --lkt-tag-font-weight: 400;
+    --lkt-tag-font-weight-content: var(--lkt-tag-font-weight);
+    --lkt-tag-font-weight-featured: var(--lkt-tag-font-weight);
+
     --lkt-tag-text-align: center;
+    --lkt-tag-text-align-content: center;
+    --lkt-tag-text-align-featured: center;
+
     --lkt-tag-padding: 15px;
+    --lkt-tag-padding-content: 15px;
+    --lkt-tag-padding-featured: 15px;
+
     --lkt-tag-min-width: initial;
+    --lkt-tag-min-width-content: initial;
+    --lkt-tag-min-width-featured: initial;
+
     --lkt-tag-max-width: initial;
+    --lkt-tag-max-width-content: initial;
+    --lkt-tag-max-width-featured: initial;
+
     --lkt-tag-width: initial;
+    --lkt-tag-width-content: initial;
+    --lkt-tag-width-featured: initial;
+
     --lkt-tag-bg: #ffffff;
+    --lkt-tag-bg-content: var(--lkt-tag-bg);
+    --lkt-tag-bg-featured: var(--lkt-tag-bg);
+
     --lkt-tag-bg-hover: #ffffff;
+    --lkt-tag-bg-hover-content: var(--lkt-tag-bg-hover);
+    --lkt-tag-bg-hover-featured: var(--lkt-tag-bg-hover);
+
     --lkt-tag-color: #444444;
+    --lkt-tag-color-content: var(--lkt-tag-color);
+    --lkt-tag-color-featured: var(--lkt-tag-color);
+
     --lkt-tag-color-hover: #444444;
-    --lkt-tag-border-radius: 1px;
+    --lkt-tag-color-hover-content: var(--lkt-tag-color-hover);
+    --lkt-tag-color-hover-featured: --lkt-tag-color-hover-featured;
+
+    --lkt-tag-border-radius: 0;
+    --lkt-tag-border-radius-content: 0;
+    --lkt-tag-border-radius-featured: 0;
+
     --lkt-tag-border-width: 1px;
+    --lkt-tag-border-width-content: 0;
+    --lkt-tag-border-width-featured: 0;
+
     --lkt-tag-border-style: solid;
+    --lkt-tag-border-style-content: solid;
+    --lkt-tag-border-style-featured: solid;
+
     --lkt-tag-border-color: #ffffff;
+    --lkt-tag-border-color-content: #ffffff;
+    --lkt-tag-border-color-featured: #ffffff;
+
     --lkt-tag-border-color-hover: #ffffff;
+    --lkt-tag-border-color-hover-content: #ffffff;
+    --lkt-tag-border-color-hover-featured: #ffffff;
+
     --lkt-tag-transition: all linear 300ms;
+    --lkt-tag-transition-content: var(--lkt-tag-transition);
+    --lkt-tag-transition-featured: var(--lkt-tag-transition);
+
 }
