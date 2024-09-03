@@ -12,6 +12,7 @@ const props = withDefaults(defineProps<{
     featuredText: string,
     icon: string,
     iconAtEnd: boolean,
+    featuredAtStart: boolean,
 
 }>(), {
     class: '',
@@ -19,10 +20,14 @@ const props = withDefaults(defineProps<{
     featuredText: '',
     icon: '',
     iconAtEnd: false,
+    featuredAtStart: false,
 });
 
 const computedClassName = computed(() => {
-        return props.class;
+        let r = [];
+        if (props.class) r.push(props.class);
+        if (props.featuredAtStart) r.push('featured-at-start');
+        return r.join(' ');
     }),
     computedText = computed(() => {
 
@@ -63,11 +68,15 @@ const computedClassName = computed(() => {
             </div>
         </template>
         <template v-else>
+            <div class="lkt-tag-featured" v-if="computedFeaturedText && featuredAtStart">
+                {{computedFeaturedText}}
+            </div>
+
             <div class="lkt-tag-content" v-if="icon" v-html="computedText"/>
             <div class="lkt-tag-content" v-else>
                 {{computedText}}
             </div>
-            <div class="lkt-tag-featured" v-if="computedFeaturedText">
+            <div class="lkt-tag-featured" v-if="computedFeaturedText && !featuredAtStart">
                 {{computedFeaturedText}}
             </div>
         </template>
