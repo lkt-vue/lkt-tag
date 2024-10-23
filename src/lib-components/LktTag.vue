@@ -31,11 +31,9 @@ const computedClassName = computed(() => {
     }),
     computedText = computed(() => {
 
-        let text = '';
-        if (props.text.startsWith('__:')) {
-            text = __(props.text.substring(3));
-        } else {
-            text = props.text;
+        let text = String(props.text);
+        if (text.startsWith('__:')) {
+            text = __(text.substring(3));
         }
 
         if (props.icon) {
@@ -63,7 +61,7 @@ const computedClassName = computed(() => {
 <template>
     <div class="lkt-tag" :class="computedClassName">
         <template v-if="slots.default">
-            <div class="lkt-tag-content">
+            <div class="lkt-tag-content is-slot">
                 <slot/>
             </div>
         </template>

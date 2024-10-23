@@ -2,7 +2,7 @@ import { defineComponent, useSlots, computed, openBlock, createElementBlock, nor
 import { __ } from "lkt-i18n";
 const _hoisted_1 = {
   key: 0,
-  class: "lkt-tag-content"
+  class: "lkt-tag-content is-slot"
 };
 const _hoisted_2 = {
   key: 0,
@@ -36,11 +36,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       if (props.featuredAtStart) r.push("featured-at-start");
       return r.join(" ");
     }), computedText = computed(() => {
-      let text = "";
-      if (props.text.startsWith("__:")) {
-        text = __(props.text.substring(3));
-      } else {
-        text = props.text;
+      let text = String(props.text);
+      if (text.startsWith("__:")) {
+        text = __(text.substring(3));
       }
       if (props.icon) {
         let icon = '<i class="' + props.icon + '"></i>';
