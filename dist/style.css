@@ -35,7 +35,7 @@
     max-width: var(--lkt-tag-max-width-content);
     width: var(--lkt-tag-width-content);
     background: var(--lkt-tag-bg-content);
-    border-radius: var(--lkt-tag-border-radius)-content;
+    border-radius: var(--lkt-tag-border-radius-content);
     border-width: var(--lkt-tag-border-width-content);
     border-style: var(--lkt-tag-border-style-content);
     border-color: var(--lkt-tag-border-color-content);
