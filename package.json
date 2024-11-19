@@ -1,6 +1,6 @@
 {
   "name": "lkt-tag",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "type": "module",
   "module": "./dist/build.js",
@@ -12,7 +12,7 @@
     "./theme": "./theme/default.css",
     "./theme/default": "./theme/default.css"
   },
-  "types": "./dist/index.d.ts",
+  "types": "./dist/build.d.ts",
   "files": [
     "dist/*",
     "src/**/*.vue",
@@ -42,6 +42,7 @@
   "dependencies": {
     "lkt-button": "^1.1.21",
     "lkt-i18n": "^1.0.4",
+    "lkt-icon": "^1.0.1",
     "lkt-ts-interfaces": "^1.0.5",
     "process": "^0.11.10",
     "sass": "^1.57.1",

@@ -5,14 +5,16 @@ import {computed, useSlots} from "vue";
 import {__} from "lkt-i18n";
 
 const slots = useSlots();
+const emit = defineEmits(['click-icon']);
 
 const props = withDefaults(defineProps<{
-    class: string,
-    text: string,
-    featuredText: string,
-    icon: string,
-    iconAtEnd: boolean,
-    featuredAtStart: boolean,
+    class?: string,
+    text?: string,
+    featuredText?: string,
+    icon?: string,
+    iconAtEnd?: boolean,
+    featuredAtStart?: boolean,
+    type?: string
 
 }>(), {
     class: '',
@@ -21,6 +23,7 @@ const props = withDefaults(defineProps<{
     icon: '',
     iconAtEnd: false,
     featuredAtStart: false,
+    type: '',
 });
 
 const computedClassName = computed(() => {
@@ -36,15 +39,6 @@ const computedClassName = computed(() => {
             text = __(text.substring(3));
         }
 
-        if (props.icon) {
-            let icon = '<i class="' + props.icon + '"></i>'
-            if (props.iconAtEnd) {
-                text += icon;
-            } else {
-                text = icon + text;
-            }
-        }
-
         return text;
     }),
     computedFeaturedText = computed(() => {
@@ -56,27 +50,35 @@ const computedClassName = computed(() => {
 
         return text;
     });
+
+const onClickIcon = () => {
+    emit('click-icon')
+};
 </script>
 
 <template>
     <div class="lkt-tag" :class="computedClassName">
+        <div class="lkt-tag-featured" v-if="computedFeaturedText && featuredAtStart">
+            {{computedFeaturedText}}
+        </div>
+        <lkt-icon
+            v-if="icon"
+            :icon="icon"
+            :type="type === 'action-icon' ? 'button' : ''"
+            @click="onClickIcon"
+        />
         <template v-if="slots.default">
             <div class="lkt-tag-content is-slot">
                 <slot/>
             </div>
         </template>
         <template v-else>
-            <div class="lkt-tag-featured" v-if="computedFeaturedText && featuredAtStart">
-                {{computedFeaturedText}}
-            </div>
-
-            <div class="lkt-tag-content" v-if="icon" v-html="computedText"/>
-            <div class="lkt-tag-content" v-else>
+            <div class="lkt-tag-content">
                 {{computedText}}
             </div>
-            <div class="lkt-tag-featured" v-if="computedFeaturedText && !featuredAtStart">
-                {{computedFeaturedText}}
-            </div>
         </template>
+        <div class="lkt-tag-featured" v-if="computedFeaturedText && !featuredAtStart">
+            {{computedFeaturedText}}
+        </div>
     </div>
 </template>
