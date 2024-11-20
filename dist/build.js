@@ -1,19 +1,12 @@
-import { defineComponent, useSlots, computed, resolveComponent, openBlock, createElementBlock, normalizeClass, toDisplayString, createCommentVNode, createBlock, unref, renderSlot } from "vue";
+import { defineComponent, useSlots, computed, resolveComponent, openBlock, createElementBlock, normalizeClass, toDisplayString, createCommentVNode, createElementVNode, createBlock, unref, renderSlot, Fragment, createTextVNode } from "vue";
 import { __ } from "lkt-i18n";
 const _hoisted_1 = {
   key: 0,
   class: "lkt-tag-featured"
 };
-const _hoisted_2 = {
-  key: 2,
-  class: "lkt-tag-content is-slot"
-};
+const _hoisted_2 = { class: "lkt-tag-content" };
 const _hoisted_3 = {
-  key: 3,
-  class: "lkt-tag-content"
-};
-const _hoisted_4 = {
-  key: 4,
+  key: 1,
   class: "lkt-tag-featured"
 };
 const _sfc_main = /* @__PURE__ */ defineComponent({
@@ -59,16 +52,18 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         class: normalizeClass(["lkt-tag", computedClassName.value])
       }, [
         computedFeaturedText.value && _ctx.featuredAtStart ? (openBlock(), createElementBlock("div", _hoisted_1, toDisplayString(computedFeaturedText.value), 1)) : createCommentVNode("", true),
-        _ctx.icon ? (openBlock(), createBlock(_component_lkt_icon, {
-          key: 1,
-          icon: _ctx.icon,
-          type: _ctx.type === "action-icon" ? "button" : "",
-          onClick: onClickIcon
-        }, null, 8, ["icon", "type"])) : createCommentVNode("", true),
-        unref(slots).default ? (openBlock(), createElementBlock("div", _hoisted_2, [
-          renderSlot(_ctx.$slots, "default")
-        ])) : (openBlock(), createElementBlock("div", _hoisted_3, toDisplayString(computedText.value), 1)),
-        computedFeaturedText.value && !_ctx.featuredAtStart ? (openBlock(), createElementBlock("div", _hoisted_4, toDisplayString(computedFeaturedText.value), 1)) : createCommentVNode("", true)
+        createElementVNode("div", _hoisted_2, [
+          _ctx.icon ? (openBlock(), createBlock(_component_lkt_icon, {
+            key: 0,
+            icon: _ctx.icon,
+            type: _ctx.type === "action-icon" ? "button" : "",
+            onClick: onClickIcon
+          }, null, 8, ["icon", "type"])) : createCommentVNode("", true),
+          unref(slots).default ? renderSlot(_ctx.$slots, "default", { key: 1 }) : (openBlock(), createElementBlock(Fragment, { key: 2 }, [
+            createTextVNode(toDisplayString(computedText.value), 1)
+          ], 64))
+        ]),
+        computedFeaturedText.value && !_ctx.featuredAtStart ? (openBlock(), createElementBlock("div", _hoisted_3, toDisplayString(computedFeaturedText.value), 1)) : createCommentVNode("", true)
       ], 2);
     };
   }

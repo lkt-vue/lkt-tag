@@ -59,26 +59,25 @@ const onClickIcon = () => {
 <template>
     <div class="lkt-tag" :class="computedClassName">
         <div class="lkt-tag-featured" v-if="computedFeaturedText && featuredAtStart">
-            {{computedFeaturedText}}
+            {{ computedFeaturedText }}
         </div>
-        <lkt-icon
-            v-if="icon"
-            :icon="icon"
-            :type="type === 'action-icon' ? 'button' : ''"
-            @click="onClickIcon"
-        />
-        <template v-if="slots.default">
-            <div class="lkt-tag-content is-slot">
+
+        <div class="lkt-tag-content">
+            <lkt-icon
+                v-if="icon"
+                :icon="icon"
+                :type="type === 'action-icon' ? 'button' : ''"
+                @click="onClickIcon"
+            />
+            <template v-if="slots.default">
                 <slot/>
-            </div>
-        </template>
-        <template v-else>
-            <div class="lkt-tag-content">
-                {{computedText}}
-            </div>
-        </template>
+            </template>
+            <template v-else>
+                {{ computedText }}
+            </template>
+        </div>
         <div class="lkt-tag-featured" v-if="computedFeaturedText && !featuredAtStart">
-            {{computedFeaturedText}}
+            {{ computedFeaturedText }}
         </div>
     </div>
 </template>
