@@ -1,19 +1,17 @@
 <script setup lang="ts">
-
-// Props
 import {computed, useSlots} from "vue";
-import {__} from "lkt-i18n";
+import {extractI18nValue} from "lkt-vue-kernel";
 
 const slots = useSlots();
 const emit = defineEmits(['click-icon']);
 
 const props = withDefaults(defineProps<{
-    class?: string,
-    text?: string,
-    featuredText?: string,
-    icon?: string,
-    iconAtEnd?: boolean,
-    featuredAtStart?: boolean,
+    class?: string
+    text?: string
+    featuredText?: string
+    icon?: string
+    iconAtEnd?: boolean
+    featuredAtStart?: boolean
     type?: string
 
 }>(), {
@@ -33,27 +31,13 @@ const computedClassName = computed(() => {
         return r.join(' ');
     }),
     computedText = computed(() => {
-
-        let text = String(props.text);
-        if (text.startsWith('__:')) {
-            text = __(text.substring(3));
-        }
-
-        return text;
+        return extractI18nValue(props.featuredText);
     }),
     computedFeaturedText = computed(() => {
-
-        let text = String(props.featuredText);
-        if (text.startsWith('__:')) {
-            text = __(text.substring(3));
-        }
-
-        return text;
+        return extractI18nValue(props.featuredText);
     });
 
-const onClickIcon = () => {
-    emit('click-icon')
-};
+const onClickIcon = () => emit('click-icon');
 </script>
 
 <template>
