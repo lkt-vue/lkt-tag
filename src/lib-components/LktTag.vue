@@ -1,28 +1,11 @@
 <script setup lang="ts">
 import {computed, useSlots} from "vue";
-import {extractI18nValue} from "lkt-vue-kernel";
+import {extractI18nValue, getDefaultValues, IconType, Tag, TagConfig, TagType} from "lkt-vue-kernel";
 
 const slots = useSlots();
 const emit = defineEmits(['click-icon']);
 
-const props = withDefaults(defineProps<{
-    class?: string
-    text?: string
-    featuredText?: string
-    icon?: string
-    iconAtEnd?: boolean
-    featuredAtStart?: boolean
-    type?: string
-
-}>(), {
-    class: '',
-    text: '',
-    featuredText: '',
-    icon: '',
-    iconAtEnd: false,
-    featuredAtStart: false,
-    type: '',
-});
+const props = withDefaults(defineProps<TagConfig>(), getDefaultValues(Tag));
 
 const computedClassName = computed(() => {
         let r = [];
@@ -30,12 +13,8 @@ const computedClassName = computed(() => {
         if (props.featuredAtStart) r.push('featured-at-start');
         return r.join(' ');
     }),
-    computedText = computed(() => {
-        return extractI18nValue(props.featuredText);
-    }),
-    computedFeaturedText = computed(() => {
-        return extractI18nValue(props.featuredText);
-    });
+    computedText = computed(() => extractI18nValue(props.featuredText)),
+    computedFeaturedText = computed(() => extractI18nValue(props.featuredText));
 
 const onClickIcon = () => emit('click-icon');
 </script>
@@ -50,7 +29,7 @@ const onClickIcon = () => emit('click-icon');
             <lkt-icon
                 v-if="icon"
                 :icon="icon"
-                :type="type === 'action-icon' ? 'button' : ''"
+                :type="type === TagType.ActionIcon ? IconType.Button : IconType.NotDefined"
                 @click="onClickIcon"
             />
             <template v-if="slots.default">
