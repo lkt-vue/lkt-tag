@@ -13,7 +13,7 @@ const computedClassName = computed(() => {
         if (props.featuredAtStart) r.push('featured-at-start');
         return r.join(' ');
     }),
-    computedText = computed(() => extractI18nValue(props.featuredText)),
+    computedText = computed(() => extractI18nValue(props.text)),
     computedFeaturedText = computed(() => extractI18nValue(props.featuredText));
 
 const onClickIcon = () => emit('click-icon');

@@ -107,7 +107,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       if (props.class) r.push(props.class);
       if (props.featuredAtStart) r.push("featured-at-start");
       return r.join(" ");
-    }), computedText = computed(() => Dt(props.featuredText)), computedFeaturedText = computed(() => Dt(props.featuredText));
+    }), computedText = computed(() => Dt(props.text)), computedFeaturedText = computed(() => Dt(props.featuredText));
     const onClickIcon = () => emit("click-icon");
     return (_ctx, _cache) => {
       const _component_lkt_icon = resolveComponent("lkt-icon");
