@@ -2,7 +2,7 @@ var __defProp = Object.defineProperty;
 var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
 var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
 var _a, _b;
-import { defineComponent, mergeDefaults, useSlots, computed, resolveComponent, createElementBlock, openBlock, normalizeClass, createCommentVNode, createElementVNode, toDisplayString, createBlock, renderSlot, unref, Fragment, createTextVNode } from "vue";
+import { defineComponent, mergeDefaults, useSlots, computed, resolveComponent, createElementBlock, openBlock, normalizeClass, createCommentVNode, createElementVNode, createBlock, renderSlot, unref, Fragment, createTextVNode, toDisplayString } from "vue";
 import "lkt-string-tools";
 import { __ } from "lkt-i18n";
 var v = ((f) => (f.Button = "button", f.Submit = "submit", f.Reset = "reset", f.Anchor = "anchor", f.Content = "content", f.Switch = "switch", f.HiddenSwitch = "hidden-switch", f.Split = "split", f.SplitLazy = "split-lazy", f.SplitEver = "split-ever", f.Tooltip = "tooltip", f.TooltipLazy = "tooltip-lazy", f.TooltipEver = "tooltip-ever", f))(v || {});
@@ -77,15 +77,9 @@ function no(e) {
   for (let r of e.lktDefaultValues) r in t && (o[r] = t[r]);
   return o;
 }
-const _hoisted_1 = {
-  key: 0,
-  class: "lkt-tag-featured"
-};
+const _hoisted_1 = ["innerHTML"];
 const _hoisted_2 = { class: "lkt-tag-content" };
-const _hoisted_3 = {
-  key: 1,
-  class: "lkt-tag-featured"
-};
+const _hoisted_3 = ["innerHTML"];
 const _sfc_main = /* @__PURE__ */ defineComponent({
   __name: "LktTag",
   props: /* @__PURE__ */ mergeDefaults({
@@ -97,7 +91,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     featuredAtStart: { type: Boolean },
     type: {}
   }, no(E)),
-  emits: ["click-icon"],
+  emits: [
+    "click-icon"
+  ],
   setup(__props, { emit: __emit }) {
     const slots = useSlots();
     const emit = __emit;
@@ -114,7 +110,11 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       return openBlock(), createElementBlock("div", {
         class: normalizeClass(["lkt-tag", computedClassName.value])
       }, [
-        computedFeaturedText.value && _ctx.featuredAtStart ? (openBlock(), createElementBlock("div", _hoisted_1, toDisplayString(computedFeaturedText.value), 1)) : createCommentVNode("", true),
+        computedFeaturedText.value && _ctx.featuredAtStart ? (openBlock(), createElementBlock("div", {
+          key: 0,
+          class: "lkt-tag-featured",
+          innerHTML: computedFeaturedText.value
+        }, null, 8, _hoisted_1)) : createCommentVNode("", true),
         createElementVNode("div", _hoisted_2, [
           _ctx.icon ? (openBlock(), createBlock(_component_lkt_icon, {
             key: 0,
@@ -126,7 +126,11 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
             createTextVNode(toDisplayString(computedText.value), 1)
           ], 64))
         ]),
-        computedFeaturedText.value && !_ctx.featuredAtStart ? (openBlock(), createElementBlock("div", _hoisted_3, toDisplayString(computedFeaturedText.value), 1)) : createCommentVNode("", true)
+        computedFeaturedText.value && !_ctx.featuredAtStart ? (openBlock(), createElementBlock("div", {
+          key: 1,
+          class: "lkt-tag-featured",
+          innerHTML: computedFeaturedText.value
+        }, null, 8, _hoisted_3)) : createCommentVNode("", true)
       ], 2);
     };
   }

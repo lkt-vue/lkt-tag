@@ -3,7 +3,9 @@ import {computed, useSlots} from "vue";
 import {extractI18nValue, getDefaultValues, IconType, Tag, TagConfig, TagType} from "lkt-vue-kernel";
 
 const slots = useSlots();
-const emit = defineEmits(['click-icon']);
+const emit = defineEmits([
+    'click-icon'
+]);
 
 const props = withDefaults(defineProps<TagConfig>(), getDefaultValues(Tag));
 
@@ -21,9 +23,7 @@ const onClickIcon = () => emit('click-icon');
 
 <template>
     <div class="lkt-tag" :class="computedClassName">
-        <div class="lkt-tag-featured" v-if="computedFeaturedText && featuredAtStart">
-            {{ computedFeaturedText }}
-        </div>
+        <div class="lkt-tag-featured" v-if="computedFeaturedText && featuredAtStart" v-html="computedFeaturedText"/>
 
         <div class="lkt-tag-content">
             <lkt-icon
@@ -39,8 +39,6 @@ const onClickIcon = () => emit('click-icon');
                 {{ computedText }}
             </template>
         </div>
-        <div class="lkt-tag-featured" v-if="computedFeaturedText && !featuredAtStart">
-            {{ computedFeaturedText }}
-        </div>
+        <div class="lkt-tag-featured" v-if="computedFeaturedText && !featuredAtStart" v-html="computedFeaturedText"/>
     </div>
 </template>
