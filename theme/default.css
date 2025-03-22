@@ -1,74 +1,73 @@
 :root {
-    --lkt-tag-gap: 0;
-    --lkt-tag-gap-content: 15px;
-    --lkt-tag-gap-featured: 15px;
+    --lkt-tag--gap: 0;
+    --lkt-tag--content--gap: 15px;
+    --lkt-tag--featured--gap: 15px;
 
-    --lkt-tag-font-size: 14px;
-    --lkt-tag-font-size-content: var(--lkt-tag-font-size);
-    --lkt-tag-font-size-featured: 14var(--lkt-tag-font-size);
+    --lkt-tag--font-size: 14px;
+    --lkt-tag--content--font-size: var(--lkt-tag--font-size);
+    --lkt-tag--featured--font-size: 14var(--lkt-tag--font-size);
 
-    --lkt-tag-font-weight: 400;
-    --lkt-tag-font-weight-content: var(--lkt-tag-font-weight);
-    --lkt-tag-font-weight-featured: var(--lkt-tag-font-weight);
+    --lkt-tag--font-weight: 400;
+    --lkt-tag--content--font-weight: var(--lkt-tag--font-weight);
+    --lkt-tag--featured--font-weight: var(--lkt-tag--font-weight);
 
-    --lkt-tag-text-align: center;
-    --lkt-tag-text-align-content: center;
-    --lkt-tag-text-align-featured: center;
+    --lkt-tag--text-align: center;
+    --lkt-tag--content--text-align: center;
+    --lkt-tag--featured--text-align: center;
 
-    --lkt-tag-padding: 15px;
-    --lkt-tag-padding-content: 15px;
-    --lkt-tag-padding-featured: 15px;
+    --lkt-tag--padding: 15px;
+    --lkt-tag--content--padding: 15px;
+    --lkt-tag--featured--padding: 15px;
 
-    --lkt-tag-min-width: initial;
-    --lkt-tag-min-width-content: initial;
-    --lkt-tag-min-width-featured: initial;
+    --lkt-tag--min-width: initial;
+    --lkt-tag--content--min-width: initial;
+    --lkt-tag--featured--min-width: initial;
 
-    --lkt-tag-max-width: initial;
-    --lkt-tag-max-width-content: initial;
-    --lkt-tag-max-width-featured: initial;
+    --lkt-tag--max-width: initial;
+    --lkt-tag--content--max-width: initial;
+    --lkt-tag--featured--max-width: initial;
 
-    --lkt-tag-width: initial;
-    --lkt-tag-width-content: initial;
-    --lkt-tag-width-featured: initial;
+    --lkt-tag--width: initial;
+    --lkt-tag--content--width: initial;
+    --lkt-tag--featured--width: initial;
 
-    --lkt-tag-bg: #ffffff;
-    --lkt-tag-bg-content: var(--lkt-tag-bg);
-    --lkt-tag-bg-featured: var(--lkt-tag-bg);
+    --lkt-tag--background: #ffffff;
+    --lkt-tag--content--background: var(--lkt-tag--background);
+    --lkt-tag--featured--background: var(--lkt-tag--background);
 
-    --lkt-tag-bg-hover: #ffffff;
-    --lkt-tag-bg-hover-content: var(--lkt-tag-bg-hover);
-    --lkt-tag-bg-hover-featured: var(--lkt-tag-bg-hover);
+    --lkt-tag--hover--background: #ffffff;
+    --lkt-tag--hover--content--background: var(--lkt-tag--hover--background);
+    --lkt-tag--hover--featured--background: var(--lkt-tag--hover--background);
 
-    --lkt-tag-color: #444444;
-    --lkt-tag-color-content: var(--lkt-tag-color);
-    --lkt-tag-color-featured: var(--lkt-tag-color);
+    --lkt-tag--color: #444444;
+    --lkt-tag--content--color: var(--lkt-tag--color);
+    --lkt-tag--featured--color: var(--lkt-tag--color);
 
-    --lkt-tag-color-hover: #444444;
-    --lkt-tag-color-hover-content: var(--lkt-tag-color-hover);
-    --lkt-tag-color-hover-featured: --lkt-tag-color-hover-featured;
+    --lkt-tag--hover--color: var(--lkt-tag--color);
+    --lkt-tag--hover--content--color: var(--lkt-tag--hover--color);
+    --lkt-tag--hover--featured--color: --lkt-tag-color-hover-featured;
 
-    --lkt-tag-border-radius: 0;
-    --lkt-tag-border-radius-content: 0;
-    --lkt-tag-border-radius-featured: 0;
+    --lkt-tag--border-radius: 0;
+    --lkt-tag--content--border-radius: 0;
+    --lkt-tag--featured--border-radius: 0;
 
-    --lkt-tag-border-width: 1px;
-    --lkt-tag-border-width-content: 0;
-    --lkt-tag-border-width-featured: 0;
+    --lkt-tag--border-width: 1px;
+    --lkt-tag--content--border-width: 0;
+    --lkt-tag--featured--border-width: 0;
 
-    --lkt-tag-border-style: solid;
-    --lkt-tag-border-style-content: solid;
-    --lkt-tag-border-style-featured: solid;
+    --lkt-tag--border-style: solid;
+    --lkt-tag--content--border-style: var(--lkt-tag--border-style);
+    --lkt-tag--featured--border-style: var(--lkt-tag--border-style);
 
-    --lkt-tag-border-color: #ffffff;
-    --lkt-tag-border-color-content: #ffffff;
-    --lkt-tag-border-color-featured: #ffffff;
+    --lkt-tag--border-color: #ffffff;
+    --lkt-tag--content--border-color: var(--lkt-tag--border-color);
+    --lkt-tag--featured--border-color: var(--lkt-tag--border-color);
 
-    --lkt-tag-border-color-hover: #ffffff;
-    --lkt-tag-border-color-hover-content: #ffffff;
-    --lkt-tag-border-color-hover-featured: #ffffff;
+    --lkt-tag--hover--border-color: var(--lkt-tag--border-color);
+    --lkt-tag--hover--content--border-color: var(--lkt-tag--content--border-color);
+    --lkt-tag--hover--featured--border-color: var(--lkt-tag--featured--border-color);
 
-    --lkt-tag-transition: all linear 300ms;
-    --lkt-tag-transition-content: var(--lkt-tag-transition);
-    --lkt-tag-transition-featured: var(--lkt-tag-transition);
-
+    --lkt-tag--transition: all linear 300ms;
+    --lkt-tag--content--transition: var(--lkt-tag--transition);
+    --lkt-tag--featured--transition: var(--lkt-tag--transition);
 }

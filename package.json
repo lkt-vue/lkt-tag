@@ -1,6 +1,6 @@
 {
   "name": "lkt-tag",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "",
   "type": "module",
   "module": "./dist/build.js",
@@ -40,10 +40,10 @@
     "vue-tsc": "^1.8.27"
   },
   "peerDependencies": {
-    "lkt-button": "^2.0.7",
-    "lkt-i18n": "^1.0.6",
-    "lkt-icon": "^1.1.2",
-    "lkt-vue-kernel": "^1.0.31",
+    "lkt-button": "^2.0.13",
+    "lkt-i18n": "^1.1.0",
+    "lkt-icon": "^2.0.0",
+    "lkt-vue-kernel": "^1.0.51",
     "vue": "^3.3.0"
   }
 }
