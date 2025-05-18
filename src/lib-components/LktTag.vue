@@ -29,7 +29,7 @@ const onClickIcon = () => emit('click-icon');
             <lkt-icon
                 v-if="icon"
                 :icon="icon"
-                :type="type === TagType.ActionIcon ? IconType.Button : IconType.NotDefined"
+                :type="IconType.NotDefined"
                 @click="onClickIcon"
             />
             <template v-if="slots.default">

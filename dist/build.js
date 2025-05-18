@@ -126,7 +126,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           _ctx.icon ? (openBlock(), createBlock(_component_lkt_icon, {
             key: 0,
             icon: _ctx.icon,
-            type: _ctx.type === unref(mt).ActionIcon ? unref(J).Button : unref(J).NotDefined,
+            type: unref(J).NotDefined,
             onClick: onClickIcon
           }, null, 8, ["icon", "type"])) : createCommentVNode("", true),
           unref(slots).default ? renderSlot(_ctx.$slots, "default", { key: 1 }) : (openBlock(), createElementBlock(Fragment, { key: 2 }, [
