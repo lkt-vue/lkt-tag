@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed, useSlots} from "vue";
-import {extractI18nValue, getDefaultValues, IconType, Tag, TagConfig, TagType} from "lkt-vue-kernel";
+import {extractI18nValue, getDefaultValues, IconType, Tag, TagConfig} from "lkt-vue-kernel";
 
 const slots = useSlots();
 const emit = defineEmits([
@@ -25,7 +25,7 @@ const onClickIcon = () => emit('click-icon');
     <div class="lkt-tag" :class="computedClassName">
         <div class="lkt-tag-featured" v-if="computedFeaturedText && featuredAtStart" v-html="computedFeaturedText"/>
 
-        <div class="lkt-tag-content">
+        <div class="lkt-tag-content" v-if="icon || slots.default || computedText">
             <lkt-icon
                 v-if="icon"
                 :icon="icon"
